@@ -5,6 +5,9 @@ const userRouter = require("./routes/user");
 // ポート番号の定義
 const PORT = 3000;
 
+//静的ファイルの使用
+app.use(express.static("public"));
+
 // ルーティングの定義
 app.get("/", (req, res) => {
   console.log(
