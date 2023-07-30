@@ -1,8 +1,10 @@
 {
   "name": "ex-express-app",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {},
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "author": "tzp",
   "dependencies": {
     "express": "^4.18.2",
