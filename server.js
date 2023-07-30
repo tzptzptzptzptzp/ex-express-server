@@ -6,7 +6,7 @@ const userRouter = require("./routes/user");
 const PORT = 3000;
 
 // ミドルウェアの使用
-app.use(mylogger);
+// app.use(mylogger);
 
 //静的ファイルの使用
 // app.use(express.static("public"));
@@ -14,7 +14,7 @@ app.use(mylogger);
 app.set("view engine", "ejs");
 
 // ルーティングの定義
-app.get("/", (req, res) => {
+app.get("/", mylogger, (req, res) => {
   console.log(
     `Access to http://localhost:${PORT}${req.baseUrl} has been detected.`
   );
