@@ -6,16 +6,19 @@ const userRouter = require("./routes/user");
 const PORT = 3000;
 
 //静的ファイルの使用
-app.use(express.static("public"));
+// app.use(express.static("public"));
+
+app.set("view engine", "ejs");
 
 // ルーティングの定義
 app.get("/", (req, res) => {
   console.log(
     `Access to http://localhost:${PORT}${req.baseUrl} has been detected.`
   );
-  res.send(
-    `<h1>The browser is accessing <a href="http://localhost:${PORT}${req.baseUrl}">http://localhost:${PORT}${req.baseUrl}</a>.</h1>`
-  );
+  // res.send(
+  //   `<h1>The browser is accessing <a href="http://localhost:${PORT}${req.baseUrl}">http://localhost:${PORT}${req.baseUrl}</a>.</h1>`
+  // );
+  res.render("index", { port: PORT, url: req.baseUrl });
 });
 
 app.use("/user", userRouter);
