@@ -5,6 +5,9 @@ const userRouter = require("./routes/user");
 // ポート番号の定義
 const PORT = 3000;
 
+// ミドルウェアの使用
+app.use(mylogger);
+
 //静的ファイルの使用
 // app.use(express.static("public"));
 
@@ -22,6 +25,12 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRouter);
+
+// ミドルウェアの定義
+function mylogger(req, res, next) {
+  console.log("middleware");
+  next();
+}
 
 app.listen(PORT, () => {
   console.log(`Server Running http://localhost:${PORT}`);
