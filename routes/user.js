@@ -22,4 +22,14 @@ router.get("/info", (req, res) => {
   );
 });
 
+router.get("/:id", (req, res) => {
+  console.log(
+    `Access to http://localhost:${PORT}${req.baseUrl}${req.url} has been detected.`
+  );
+  res.send(
+    `<h1>The browser is accessing <a href="http://localhost:${PORT}${req.baseUrl}${req.url}">http://localhost:${PORT}${req.baseUrl}${req.url}</a>.<br>
+    Your ID is [${req.params.id}].</h1>`
+  );
+});
+
 module.exports = router;
