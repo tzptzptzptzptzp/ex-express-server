@@ -18,3 +18,25 @@ npm を使用しています
 npm
 npm start // サーバー起動
 ```
+
+---
+
+## Introduction
+
+This is a simple server built using Express.js.  
+It uses the EJS templating engine and handles dynamic routing and middleware processing.
+
+## Technologies Used
+
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [EJS](https://ejs.co/)
+
+## Development Steps
+
+We use npm for development.
+
+```bash
+npm
+npm start // Start the server
+```
